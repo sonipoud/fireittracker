@@ -1,5 +1,5 @@
 {
-  "name": "Employee-Tracker",
+  "name": "employeetracker",
   "version": "1.0.0",
   "description": "## Description This application is built inorder to view and manage the departments, roles and employees in the company to organize and plan the business.",
   "main": "index.js",

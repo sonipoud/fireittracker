@@ -1,2 +1,2 @@
-CREATE DATABASE employees;
-USE employees;
+CREATE DATABASE employees-tracker;
+USE employees-tracker;
