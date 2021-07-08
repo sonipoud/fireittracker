@@ -1,0 +1,26 @@
+{
+  "name": "Employee-Tracker",
+  "version": "1.0.0",
+  "description": "## Description This application is built inorder to view and manage the departments, roles and employees in the company to organize and plan the business.",
+  "main": "index.js",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^8.1.1",
+    "mysql2": "^2.2.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sonipoud/fireittracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sonipoud/fireittracker/issues"
+  },
+  "homepage": "https://github.com/sonipoud/fireittracker#readme"
+}
