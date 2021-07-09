@@ -17,19 +17,19 @@ VALUES
 
 
 
--- INSERT INTO employees (first_name, last_name, role_id, manager_id)
--- VALUES
--- ('James', 'Fraser', 1),
--- ('Jack', 'London', 2),
--- ('Robert', 'Bruce', 3),
--- ('Peter', 'Greenaway', 4),
--- ('Derek', 'Jarman', 5),
--- ('Paolo', 'Pasolini', 6),
--- ('Heathcote', 'Williams', 7),
--- ('Sandy', 'Powell', 7),
--- ('Emil', 'Zola', 6),
--- ('Sissy', 'Coalpits', 5),
--- ('Antoinette', 'Capet', 4),
--- ('Samuel', 'Delany', 3),
--- ('Tony', 'Duvert', 2),
--- ('Dennis', 'Cooper', 1);
+INSERT INTO employees (first_name, last_name, role_id, manager_id)
+VALUES
+('James', 'Fraser', 1, NULL),
+('Jack', 'London', 2, NULL),
+('Robert', 'Bruce', 3, NULL),
+('Peter', 'Greenaway', 4, NULL),
+('Derek', 'Jarman', 5, NULL),
+('Paolo', 'Pasolini', 6, NULL),
+('Heathcote', 'Williams', 7, NULL),
+('Sandy', 'Powell', 7, NULL),
+('Emil', 'Zola', 6, NULL),
+('Sissy', 'Coalpits', 5, NULL),
+('Antoinette', 'Capet', 4, NULL),
+('Samuel', 'Delany', 3, NULL),
+('Tony', 'Duvert', 2, NULL),
+('Dennis', 'Cooper', 1, NULL);
