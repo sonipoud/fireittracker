@@ -11,30 +11,30 @@ const office = () => {
             name: 'option',
             message: 'What would you like to do?',
             choices: [
-                "Add Department",
-                "Add Role",
-                "Add Employee",
                 "View Departments",
                 "View Roles",
                 "View Employees",
+                "Add Department",
+                "Add Role",
+                "Add Employee",
                 "Update Employee Role",
                 "Quit",
             ],
         }
     ]).then((answer) => {
         switch (answer.option) {
-            case "Add Department":
-                return addDepartment();
-            case "Add Role":
-                return addRole();
-            case "Add Employee":
-                return addEmployee();
             case "View Departments":
                 return viewAllDepartments();
             case "View Roles":
                 return viewAllRoles();
             case "View Employees":
                 return viewAllEmployees();
+            case "Add Department":
+                return addDepartment();
+            case "Add Role":
+                return addRole();
+            case "Add Employee":
+                return addEmployee();
             case "Update Employee Role":
                 return updateEmployeeRole();
             case "Quit":
@@ -43,18 +43,34 @@ const office = () => {
     })
 }
 
+function viewAllDepartments() {
+    const departments = db.viewAllDepartments();
+    console.table(departments);
+}
+
+function viewAllRoles() {
+    const roles = db.viewAllRoles();
+    console.table(roles);
+}
+
+function viewAllEmployees() {
+    const employees = db.viewAllEmployees();
+    console.table(employees);
+}
+
 function addDepartment() {
-    inquirer.prompt([
+    const department = inquirer.prompt([
         {
             type: "input",
             name: "name",
             message: "What is the name of the department?"
         }
     ]);
+    db.addDepartment(department);
 };
 
 function addRole() {
-    inquirer.prompt([
+    const roles = inquirer.prompt([
         {
             type: "input",
             name: "title",
@@ -72,10 +88,11 @@ function addRole() {
             choices: ""
         }
     ]);
+    db.addRole(roles);
 };
 
 function addEmployee() {
-    inquirer.prompt([
+    const employees = inquirer.prompt([
         {
             type: "input",
             name: "first_name",
@@ -87,27 +104,18 @@ function addEmployee() {
             message: "What is the last name for this employee?"
         }
     ]);
+    db.addEmployee(employees);
 }
 
-function viewAllDepartments() {
+function updateEmployeeRole() {
+    const employeeChoices = db.viewAllEmployees();
+    const roleChoices = db.viewAllRoles();
 
-}
-
-function viewAllRoles() {
-
-}
-
-function viewAllEmployees() {
-
-}
-
-function updateEmployeeRole(){
-
+    db.updateEmployeeRole(employeeChoices, roleChoices);
 }
 
 function quit() {
     process.exit();
 }
 
-
-module.exports = office;
+module.exports = office(db);
