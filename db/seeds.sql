@@ -1,3 +1,5 @@
+USE employeestracker;
+
 INSERT INTO department (name)
 VALUES
 ('Legal'),
@@ -22,14 +24,14 @@ VALUES
 ('James', 'Fraser', 1, NULL),
 ('Jack', 'London', 2, NULL),
 ('Robert', 'Bruce', 3, NULL),
-('Peter', 'Greenaway', 4, NULL),
+('Peter', 'Greenaway', 4, 5),
 ('Derek', 'Jarman', 5, NULL),
 ('Paolo', 'Pasolini', 6, NULL),
-('Heathcote', 'Williams', 7, NULL),
+('Heathcote', 'Williams', 7, 8),
 ('Sandy', 'Powell', 7, NULL),
 ('Emil', 'Zola', 6, NULL),
 ('Sissy', 'Coalpits', 5, NULL),
-('Antoinette', 'Capet', 4, NULL),
+('Antoinette', 'Capet', 4, 4),
 ('Samuel', 'Delany', 3, NULL),
 ('Tony', 'Duvert', 2, NULL),
-('Dennis', 'Cooper', 1, NULL);
+('Dennis', 'Cooper', 1, 3);

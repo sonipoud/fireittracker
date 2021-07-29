@@ -1,9 +1,9 @@
 const mysql = require('mysql2');
 const inquirer = require('inquirer');
 const db = require('./db');
+const connection = require('./connection');
 
-
-
+//Inquirer prompts
 const office = () => {
     inquirer.prompt([
         {
@@ -23,28 +23,48 @@ const office = () => {
         }
     ]).then((answer) => {
         switch (answer.option) {
-            case "View Departments":
+            case "View All Departments":
                 return viewAllDepartments();
-            case "View Roles":
+                break;
+
+            case "View All Roles":
                 return viewAllRoles();
-            case "View Employees":
+                break;
+
+            case "View All Employees":
                 return viewAllEmployees();
+                break;
+
             case "Add Department":
                 return addDepartment();
+                break;
+
             case "Add Role":
                 return addRole();
+                break;
+
             case "Add Employee":
                 return addEmployee();
+                break;
+
             case "Update Employee Role":
                 return updateEmployeeRole();
+                break;
+
             case "Quit":
                 return quit();
+                break;
         }
     })
 }
 
 function viewAllDepartments() {
-    const departments = db.viewAllDepartments();
+    db.viewAllDepartments()
+    .then(([rows]) => {
+        let department = rows;
+        const departmentChoices = departments.map(({ id, name}) => {
+        })
+    })
     console.table(departments);
 }
 
@@ -119,3 +139,41 @@ function quit() {
 }
 
 module.exports = office(db);
+
+// class databaseQuery {
+//     constructor(connection) {
+//         this.connection = connection;
+//     }
+//     //Department (get, add)
+//     viewAllDepartments() {
+//         return this.connection("SELECT * FROM department")
+//     }
+
+//     addDepartment() {
+//         return this.connection()
+//     }
+
+//     //Role (get, add)
+//     viewAllRoles() {
+//         return this.connection("SELECT * FROM roles")
+//     }
+
+//     addRoles() {
+//         return this.connection()
+//     }
+
+//     //Employee (get, add, update)
+//     viewAllEmployee() {
+//         return this.connection("SELECT * FROM employees")
+//     }
+
+//     addEmployees() {
+//         return this.connection()
+//     }
+
+//     updateEmployeeRole() {
+//         return this.connection()
+//     }
+// }
+
+// module.exports = databaseQuery;
